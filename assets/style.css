@@ -461,7 +461,7 @@ ul, ol { padding: 0; list-style: none; }
   border-bottom: 1px solid var(--line-soft);
   font-size: 14px;
 }
-.cred-list .k { flex: 0 0 72px; }
+.cred-list .k { flex: 0 0 92px; }
 .cred-list .v { color: var(--ink-2); }
 
 .timeline { margin-top: var(--s-8); border-left: 1px solid var(--line); }
