@@ -11,34 +11,37 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body data-page="submit">
+  <a class="skip-link" href="#main" data-i18n="app.skip">跳到主要内容</a>
 
   <header class="site-nav">
     <div class="container site-nav__inner">
       <a class="wordmark" href="index.html">设计思维在 K12<span class="dot">.</span></a>
       <nav class="site-nav__links" aria-label="主导航">
-        <a href="index.html">首页</a>
-        <a href="cases.html">案例库</a>
-        <a href="submit.html" aria-current="page">提交案例</a>
+        <a href="index.html" data-i18n="nav.home">首页</a>
+        <a href="cases.html" data-i18n="nav.cases">案例库</a>
+        <a href="submit.html" aria-current="page" data-i18n="nav.submit">提交案例</a>
       </nav>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="打开菜单">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
+      <div class="site-nav__actions">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" data-i18n-aria="app.menu.open">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
     </div>
     <nav class="nav-panel container" id="nav-panel" aria-label="移动端导航">
       <a href="index.html">首页</a>
       <a href="cases.html">案例库</a>
-      <a href="submit.html" aria-current="page">提交案例</a>
+      <a href="submit.html" aria-current="page" data-i18n="nav.submit">提交案例</a>
     </nav>
   </header>
 
   <main id="main">
     <div class="container">
       <div class="page-head">
-        <span class="kicker">Share Your Case</span>
-        <h1 class="h1" style="margin-top: 16px;">提交一个教学案例</h1>
-        <p class="body-lg">好案例不一定是完美的案例。我们最想看到的，是你在真实课堂里走过的路径、学生的真实产出，以及那些只有你自己知道的坑。带 <span style="color: var(--error);">*</span> 的为必填项。</p>
+        <span class="kicker" data-i18n="sub.kicker">Share Your Case</span>
+        <h1 class="h1" style="margin-top: 16px;" data-i18n="sub.title">提交一个教学案例</h1>
+        <p class="body-lg" data-i18n="sub.desc">好案例不一定是完美的案例。我们最想看到的，是你在真实课堂里走过的路径、学生的真实产出，以及那些只有你自己知道的坑。带 <span style="color: var(--error);">*</span> 的为必填项。</p>
       </div>
 
       <section class="band-tint" style="margin-bottom: 96px; border: 1px solid var(--line-soft); border-radius: 2px;" aria-label="案例提交表单">
@@ -48,84 +51,88 @@
           <form id="case-form" novalidate>
             <div class="form-grid">
               <div class="field field-full">
-                <label for="f-title">案例标题 <span class="req" aria-hidden="true">*</span></label>
+                <label for="f-title"><span data-i18n="sub.f.title">案例标题</span> <span class="req" aria-hidden="true">*</span></label>
                 <input type="text" id="f-title" name="title" required aria-required="true"
-                       placeholder="例：操场积水去哪儿了：校园雨水花园改造提案">
-                <p class="field__help">建议格式：主标题 + 副标题，让人一眼看出项目做了什么。</p>
+                       placeholder="例：操场积水去哪儿了：校园雨水花园改造提案" data-i18n-placeholder="sub.ph.title">
+                <p class="field__help" data-i18n="sub.help.title">建议格式：主标题 + 副标题，让人一眼看出项目做了什么。</p>
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field">
-                <label for="f-stage">学段 <span class="req" aria-hidden="true">*</span></label>
+                <label for="f-stage"><span data-i18n="sub.f.stage">学段</span> <span class="req" aria-hidden="true">*</span></label>
                 <select id="f-stage" name="stage" required aria-required="true">
-                  <option value="">请选择学段</option>
-                  <option value="小学低年级">小学低年级（1–3 年级）</option>
-                  <option value="小学高年级">小学高年级（4–6 年级）</option>
-                  <option value="初中">初中（7–9 年级）</option>
-                  <option value="高中">高中（10–12 年级）</option>
-                  <option value="跨学段">跨学段（混龄 / 选修班）</option>
+                  <option value="" data-i18n="sub.stage.placeholder">请选择学段</option>
+                  <option value="pl" data-i18n="sub.stage.pl">小学低年级（1–3 年级）</option>
+                  <option value="ph" data-i18n="sub.stage.ph">小学高年级（4–6 年级）</option>
+                  <option value="jh" data-i18n="sub.stage.jh">初中（7–9 年级）</option>
+                  <option value="sh" data-i18n="sub.stage.sh">高中（10–12 年级）</option>
+                  <option value="cross" data-i18n="sub.stage.cross">跨学段（混龄 / 选修班）</option>
                 </select>
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field">
-                <label for="f-grade">年级 <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-grade" name="grade" required aria-required="true" placeholder="例：七年级 / 四至八年级选修班">
+                <label for="f-grade"><span data-i18n="sub.f.grade">年级</span> <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-grade" name="grade" required aria-required="true"
+                       placeholder="例：七年级 / 四至八年级选修班" data-i18n-placeholder="sub.ph.grade">
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field">
-                <label for="f-subject">学科 / 课程属性</label>
-                <input type="text" id="f-subject" name="subject" placeholder="例：科学 · 地理 / 综合实践 / 班本课程">
+                <label for="f-subject" data-i18n="sub.f.subject">学科 / 课程属性</label>
+                <input type="text" id="f-subject" name="subject"
+                       placeholder="例：科学 · 地理 / 综合实践 / 班本课程" data-i18n-placeholder="sub.ph.subject">
               </div>
 
               <div class="field">
-                <label for="f-hours">课时 <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-hours" name="hours" required aria-required="true" placeholder="例：8 课时（每课时 40 分钟）">
+                <label for="f-hours"><span data-i18n="sub.f.hours">课时</span> <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-hours" name="hours" required aria-required="true"
+                       placeholder="例：8 课时（每课时 40 分钟）" data-i18n-placeholder="sub.ph.hours">
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field field-full">
-                <label for="f-flow">设计流程 <span class="req" aria-hidden="true">*</span></label>
+                <label for="f-flow"><span data-i18n="sub.f.flow">设计流程</span> <span class="req" aria-hidden="true">*</span></label>
                 <input type="text" id="f-flow" name="flow" required aria-required="true"
-                       placeholder="例：共情采访、定义问题、头脑风暴、原型制作、社区测试">
-                <p class="field__help">用「、」或逗号分隔各环节，按课堂上的实际顺序排列。</p>
+                       placeholder="例：共情采访、定义问题、头脑风暴、原型制作、社区测试" data-i18n-placeholder="sub.ph.flow">
+                <p class="field__help" data-i18n="sub.help.flow">用「、」或逗号分隔各环节，按课堂上的实际顺序排列。</p>
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field field-full">
-                <label for="f-context">项目背景</label>
+                <label for="f-context" data-i18n="sub.f.context">项目背景</label>
                 <textarea id="f-context" name="context" rows="3"
-                          placeholder="这个项目从哪里来？学生的真实处境是什么？"></textarea>
+                          placeholder="这个项目从哪里来？学生的真实处境是什么？" data-i18n-placeholder="sub.ph.context"></textarea>
               </div>
 
               <div class="field field-full">
-                <label for="f-outcome">学生成果 <span class="req" aria-hidden="true">*</span></label>
+                <label for="f-outcome"><span data-i18n="sub.f.outcome">学生成果</span> <span class="req" aria-hidden="true">*</span></label>
                 <textarea id="f-outcome" name="outcome" rows="4" required aria-required="true"
-                          placeholder="学生最终做出了什么？产出物（模型、提案、地图、活动……）与可量化的变化都可以写。"></textarea>
-                <p class="field__help">这是案例最有价值的部分，请尽量具体——数字和实物最动人。</p>
+                          placeholder="学生最终做出了什么？产出物（模型、提案、地图、活动……）与可量化的变化都可以写。" data-i18n-placeholder="sub.ph.outcome"></textarea>
+                <p class="field__help" data-i18n="sub.help.outcome">这是案例最有价值的部分，请尽量具体——数字和实物最动人。</p>
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field field-full">
-                <label for="f-reflection">教师反思 <span class="req" aria-hidden="true">*</span></label>
+                <label for="f-reflection"><span data-i18n="sub.f.reflect">教师反思</span> <span class="req" aria-hidden="true">*</span></label>
                 <textarea id="f-reflection" name="reflection" rows="4" required aria-required="true"
-                          placeholder="哪个环节超出了预期？哪里踩了坑？如果重来一次你会怎么调整？"></textarea>
-                <p class="field__help">真实的教学反思对同行最有帮助，不必写成教学论文。</p>
+                          placeholder="哪个环节超出了预期？哪里踩了坑？如果重来一次你会怎么调整？" data-i18n-placeholder="sub.ph.reflect"></textarea>
+                <p class="field__help" data-i18n="sub.help.reflect">真实的教学反思对同行最有帮助，不必写成教学论文。</p>
                 <p class="field__error" role="alert"></p>
               </div>
 
               <div class="field field-full">
-                <label for="f-teacher">提交者署名（可选）</label>
-                <input type="text" id="f-teacher" name="teacher" placeholder="你的名字 / 学校，愿意公开时再填写">
+                <label for="f-teacher" data-i18n="sub.f.teacher">提交者署名（可选）</label>
+                <input type="text" id="f-teacher" name="teacher"
+                       placeholder="你的名字 / 学校，愿意公开时再填写" data-i18n-placeholder="sub.ph.teacher">
               </div>
 
               <div class="field field-full">
                 <div class="field-consent">
                   <input type="checkbox" id="f-consent" required aria-required="true" aria-describedby="consent-help">
                   <div>
-                    <label for="f-consent" style="font-weight: 500;">我确认本案例由我本人或本校团队实施，案例中不含学生真实姓名等隐私信息，并授权案例库整理后公开收录。<span class="req" aria-hidden="true">*</span></label>
-                    <p class="field__help" id="consent-help">提交后案例先进入待整理队列，主理人可能会与你联系补充细节。</p>
+                    <label for="f-consent" style="font-weight: 500;"><span data-i18n="sub.consent">我确认本案例由我本人或本校团队实施，案例中不含学生真实姓名等隐私信息，并授权案例库整理后公开收录。</span> <span class="req" aria-hidden="true">*</span></label>
+                    <p class="field__help" id="consent-help" data-i18n="sub.help.consent">提交后案例先进入待整理队列，主理人可能会与你联系补充细节。</p>
                     <p class="field__error" role="alert"></p>
                   </div>
                 </div>
@@ -133,8 +140,8 @@
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">提交案例</button>
-              <p class="form-note" style="margin: 0;">当前版本案例保存于本机浏览器中，正式收录前不会公开展示。</p>
+              <button type="submit" class="btn btn-primary" data-i18n="sub.submit">提交案例</button>
+              <p class="form-note" style="margin: 0;" data-i18n="sub.note">当前版本案例保存于本机浏览器中，正式收录前不会公开展示。</p>
             </div>
           </form>
 
@@ -143,12 +150,12 @@
             <div class="check">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
             </div>
-            <h2 class="h2">案例已收到，谢谢分享</h2>
-            <p>你的案例已存入案例库的本机队列，刷新后即可在<a href="cases.html" style="color: var(--accent-deep); font-weight: 600;">案例库</a>中看到它。正式收录前，主理人会与你核对细节。</p>
+            <h2 class="h2" data-i18n="sub.ok.title">案例已收到，谢谢分享</h2>
+            <p><span data-i18n="sub.ok.desc.text">你的案例已存入案例库的本机队列，刷新后即可在</span><a href="cases.html" style="color: var(--accent-deep); font-weight: 600;" data-i18n="sub.ok.desc.link">案例库</a><span data-i18n="sub.ok.desc.tail">中看到它。正式收录前，主理人会与你核对细节。</span></p>
             <span class="case-ref" id="success-ref"></span>
             <div class="form-success__actions">
-              <button type="button" class="btn btn-primary" id="btn-another">再提交一个</button>
-              <a class="btn btn-ghost" href="cases.html">去案例库看看</a>
+              <button type="button" class="btn btn-primary" id="btn-another" data-i18n="sub.ok.another">再提交一个</button>
+              <a class="btn btn-ghost" href="cases.html" data-i18n="sub.ok.browse">去案例库看看</a>
             </div>
           </div>
 
@@ -162,32 +169,33 @@
       <div class="site-footer__grid">
         <div>
           <a class="wordmark" href="index.html">设计思维在 K12<span style="color: var(--accent);">.</span></a>
-          <p>一个由一线教师维护的 K12 设计思维教学案例资源库。案例仅供教学参考，引用请注明出处。</p>
+          <p data-i18n="ft.desc">一个由一线教师维护的 K12 设计思维教学案例资源库。案例仅供教学参考，引用请注明出处。</p>
         </div>
         <div class="site-footer__col">
-          <span class="label">导航</span>
+          <span class="label" data-i18n="ft.col.nav">导航</span>
           <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="cases.html">案例库</a></li>
-            <li><a href="submit.html">提交案例</a></li>
+            <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+            <li><a href="cases.html" data-i18n="nav.cases">案例库</a></li>
+            <li><a href="submit.html" data-i18n="nav.submit">提交案例</a></li>
           </ul>
         </div>
         <div class="site-footer__col">
-          <span class="label">参与</span>
+          <span class="label" data-i18n="ft.col.join">参与</span>
           <ul>
-            <li><a href="cases.html">浏览全部案例</a></li>
-            <li><a href="index.html#host">认识主理人</a></li>
+            <li><a href="cases.html" data-i18n="ft.link.browse">浏览全部案例</a></li>
+            <li><a href="index.html#host" data-i18n="ft.link.curator">认识主理人</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__base">
-        <span class="micro">© 2026 设计思维在 K12 · 案例库</span>
-        <span class="micro">Made by educators, for educators</span>
+        <span class="micro" data-i18n="ft.copyright">© 2026 设计思维在 K12 · 案例库</span>
+        <span class="micro" data-i18n="ft.tagline">Made by educators, for educators</span>
       </div>
     </div>
   </footer>
 
   <script src="assets/cases.js"></script>
+  <script src="assets/i18n.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
