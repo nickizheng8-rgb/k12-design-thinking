@@ -1,6 +1,6 @@
 /* ============================================================
-   K12 设计思维教学案例库 — 站点交互
-   模块：导航 / 滚动入场 / 案例库渲染与筛选 / 详情 Dialog / 提交表单
+   K12 设计思维教学案例库 — 站点交互（双语版）
+   依赖：assets/i18n.js（window.I18N_LIB）、assets/cases.js
    ============================================================ */
 (function () {
   "use strict";
@@ -8,23 +8,31 @@
   /* ---------- 公共工具 ---------- */
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  function t(key, params) { return window.I18N_LIB ? window.I18N_LIB.t(key, params) : key; }
+  function lang() { return window.I18N_LIB ? window.I18N_LIB.current() : "zh"; }
+  /* 取语言对字段的当前语言值，缺失时回退中文 */
+  function L(field) {
+    if (field && typeof field === "object") { return field[lang()] || field.zh || ""; }
+    return field || "";
+  }
 
-  /* 学段 → 标签配色类（DESIGN.md Section 2） */
-  var STAGE_CLASS = {
-    "小学低年级": "tag-rose",
-    "小学高年级": "tag-yellow",
-    "初中": "tag-green",
-    "高中": "tag-blue",
-    "跨学段": "tag-gray"
-  };
-  function stageClass(stage) { return STAGE_CLASS[stage] || "tag-gray"; }
+  /* 学段 ID → 标签配色类（DESIGN.md Section 2） */
+  var STAGE_CLASS = { pl: "tag-rose", ph: "tag-yellow", jh: "tag-green", sh: "tag-blue", cross: "tag-gray" };
+  function stageClass(id) { return STAGE_CLASS[id] || "tag-gray"; }
+  function stageLabel(id) { return t("stage." + id); }
 
   /* 数据层：种子 + 用户提交（localStorage 持久化） */
   var STORE_KEY = "dt_k12_cases_user_v1";
+  /* 旧版数据学段存的是中文文案，迁移为稳定 ID */
+  var LEGACY_STAGE = { "小学低年级": "pl", "小学高年级": "ph", "初中": "jh", "高中": "sh", "跨学段": "cross" };
   function loadUserCases() {
     try {
       var raw = localStorage.getItem(STORE_KEY);
-      return raw ? JSON.parse(raw) : [];
+      var list = raw ? JSON.parse(raw) : [];
+      list.forEach(function (c) {
+        if (c.stage && LEGACY_STAGE[c.stage]) { c.stage = LEGACY_STAGE[c.stage]; }
+      });
+      return list;
     } catch (e) { return []; }
   }
   function saveUserCases(list) {
@@ -56,9 +64,8 @@
   /* ---------- 滚动入场（IntersectionObserver） ---------- */
   function revealNow(el) { el.classList.add("is-in"); }
   function revealAsync(root) {
-    var items = $$(".reveal", root);
     requestAnimationFrame(function () {
-      items.forEach(revealNow);
+      $$(".reveal", root).forEach(revealNow);
     });
   }
   function initReveal() {
@@ -80,7 +87,7 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- 案例库 ---------- */
+  /* ---------- 案例卡片 ---------- */
   function caseCardNode(c) {
     var li = document.createElement("li");
     li.className = "case-grid__item";
@@ -94,32 +101,32 @@
     tags.className = "case-card__tags";
     var stage = document.createElement("span");
     stage.className = "tag " + stageClass(c.stage);
-    stage.textContent = c.stage;
+    stage.textContent = stageLabel(c.stage);
     tags.appendChild(stage);
-    if (c.subject) {
+    if (L(c.subject)) {
       var subj = document.createElement("span");
       subj.className = "tag tag-gray";
-      subj.textContent = c.subject;
+      subj.textContent = L(c.subject);
       tags.appendChild(subj);
     }
 
     var title = document.createElement("h3");
     title.className = "case-card__title";
-    title.textContent = c.title;
+    title.textContent = L(c.title) || L(c.outcome).slice(0, 24);
 
     var meta = document.createElement("p");
     meta.className = "case-card__meta";
-    meta.textContent = c.grade + " · " + c.hours;
+    meta.textContent = L(c.grade) + " · " + L(c.hours);
     if (c.year) {
       var sep = document.createElement("em");
       sep.textContent = "|";
       meta.appendChild(sep);
-      meta.appendChild(document.createTextNode(c.year + " 年"));
+      meta.appendChild(document.createTextNode(lang() === "en" ? c.year : c.year + " 年"));
     }
 
     var flow = document.createElement("div");
     flow.className = "case-card__flow";
-    (c.flow || []).slice(0, 5).forEach(function (s) {
+    (L(c.flow) || []).slice(0, 5).forEach(function (s) {
       var st = document.createElement("span");
       st.className = "step";
       st.textContent = s;
@@ -128,11 +135,11 @@
 
     var excerpt = document.createElement("p");
     excerpt.className = "case-card__excerpt";
-    excerpt.textContent = (c.outcome || "").slice(0, 76);
+    excerpt.textContent = (L(c.outcome) || "").slice(0, 76);
 
     var more = document.createElement("span");
     more.className = "case-card__more";
-    more.textContent = "阅读完整案例 ";
+    more.textContent = t("cases.more");
     var arrow = document.createElement("span");
     arrow.className = "arrow";
     arrow.setAttribute("aria-hidden", "true");
@@ -152,63 +159,69 @@
   function fillDialog(dialog, c) {
     var stageEl = $(".case-dialog__stage", dialog);
     stageEl.className = "badge case-dialog__stage";
-    stageEl.textContent = c.stage;
-    $("h2", dialog).textContent = c.title;
-    $(".case-dialog__meta", dialog).textContent = "";
-    [c.grade, c.subject, c.hours, c.year ? c.year + " 年收录" : ""].forEach(function (m) {
+    stageEl.textContent = stageLabel(c.stage);
+    $("h2", dialog).textContent = L(c.title);
+    var meta = $(".case-dialog__meta", dialog);
+    meta.textContent = "";
+    var added = t("cases.dlg.added", { y: c.year });
+    [L(c.grade), L(c.subject), L(c.hours), added].forEach(function (m) {
       if (!m) return;
       var span = document.createElement("span");
       span.textContent = m;
-      $(".case-dialog__meta", dialog).appendChild(span);
+      meta.appendChild(span);
     });
-    $(".case-dialog__context", dialog).textContent = c.context || "—";
+    $(".case-dialog__context", dialog).textContent = L(c.context) || "—";
     var flowWrap = $(".case-dialog__flow", dialog);
     flowWrap.textContent = "";
-    (c.flow || []).forEach(function (s) {
+    (L(c.flow) || []).forEach(function (s) {
       var st = document.createElement("span");
       st.className = "step case-card__flow-step";
       st.style.cssText = "font-size:12px;font-weight:500;border:1px solid var(--line-soft);padding:4px 10px;border-radius:2px;";
       st.textContent = s;
       flowWrap.appendChild(st);
     });
-    $(".case-dialog__outcome", dialog).textContent = c.outcome || "—";
-    $(".case-dialog__reflection", dialog).textContent = c.reflection || "—";
+    $(".case-dialog__outcome", dialog).textContent = L(c.outcome) || "—";
+    $(".case-dialog__reflection", dialog).textContent = L(c.reflection) || "—";
   }
 
+  /* ---------- 案例库 ---------- */
   function initCasesPage() {
     var list = $("#case-list");
-    if (!list) return;
+    if (!list) return null;
 
     var dialog = $("#case-dialog");
-    var filterStage = "全部";
+    var filterStage = "all";
     var keyword = "";
+
+    /* 搜索同时命中中英文内容 */
+    function searchText(c) {
+      var f = function (x) { return (x && typeof x === "object") ? (x.zh + " " + x.en) : (x || ""); };
+      return [c.title, c.outcome, c.context, c.subject, c.grade].map(f).join(" ").toLowerCase();
+    }
 
     function render() {
       var cases = allCases().filter(function (c) {
-        var okStage = filterStage === "全部" || c.stage === filterStage;
+        var okStage = filterStage === "all" || c.stage === filterStage;
         var kw = keyword.trim().toLowerCase();
-        var okKw = !kw ||
-          (c.title + " " + (c.outcome || "") + " " + (c.context || "") + " " + (c.subject || "") + " " + (c.grade || ""))
-            .toLowerCase().indexOf(kw) !== -1;
+        var okKw = !kw || searchText(c).indexOf(kw) !== -1;
         return okStage && okKw;
       });
       list.textContent = "";
-      if (!cases.length) {
-        var empty = $(".empty-state");
-        if (empty) empty.hidden = false;
-        return;
-      }
       var empty = $(".empty-state");
-      if (empty) empty.hidden = true;
-      cases.forEach(function (c, i) {
-        var node = caseCardNode(c);
-        node.style.setProperty("--i", Math.min(i % 6, 5));
-        node.classList.add("reveal");
-        list.appendChild(node);
-      });
-      revealAsync(list);
+      if (!cases.length) {
+        if (empty) empty.hidden = false;
+      } else {
+        if (empty) empty.hidden = true;
+        cases.forEach(function (c, i) {
+          var node = caseCardNode(c);
+          node.style.setProperty("--i", Math.min(i % 6, 5));
+          node.classList.add("reveal");
+          list.appendChild(node);
+        });
+        revealAsync(list);
+      }
       var count = $("#case-count");
-      if (count) count.textContent = "共收录 " + cases.length + " 个案例";
+      if (count) count.textContent = t("cases.count", { n: cases.length });
     }
 
     list.addEventListener("click", function (e) {
@@ -245,19 +258,25 @@
       });
     }
     render();
+    return { render: render };
   }
 
   /* ---------- 首页精选案例 ---------- */
   function initFeatured() {
     var list = $("#featured-list");
-    if (!list) return;
-    allCases().slice(0, 3).forEach(function (c, i) {
-      var node = caseCardNode(c);
-      node.style.setProperty("--i", i);
-      node.classList.add("reveal");
-      list.appendChild(node);
-    });
-    revealAsync(list);
+    if (!list) return null;
+    function render() {
+      list.textContent = "";
+      allCases().slice(0, 3).forEach(function (c, i) {
+        var node = caseCardNode(c);
+        node.style.setProperty("--i", i);
+        node.classList.add("reveal");
+        list.appendChild(node);
+      });
+      revealAsync(list);
+    }
+    render();
+    return { render: render };
   }
 
   /* ---------- 提交表单 ---------- */
@@ -295,14 +314,14 @@
       var consent = $("#f-consent").checked;
 
       var ok = true;
-      if (title.length < 4) { setError("f-title", "请填写至少 4 个字的案例标题。"); ok = false; } else setError("f-title", "");
-      if (!stage) { setError("f-stage", "请选择学段。"); ok = false; } else setError("f-stage", "");
-      if (!grade) { setError("f-grade", "请填写年级。"); ok = false; } else setError("f-grade", "");
-      if (!hours) { setError("f-hours", "请填写课时。"); ok = false; } else setError("f-hours", "");
-      if (flow.length < 2) { setError("f-flow", "请填写设计流程，用「、」或逗号分隔各环节。"); ok = false; } else setError("f-flow", "");
-      if (outcome.length < 20) { setError("f-outcome", "请描述学生成果（至少 20 字），这是案例最有价值的部分。"); ok = false; } else setError("f-outcome", "");
-      if (reflection.length < 20) { setError("f-reflection", "请写下你的反思（至少 20 字），真实的教学反思对同行最有帮助。"); ok = false; } else setError("f-reflection", "");
-      if (!consent) { setError("f-consent", "需要确认公开授权后才能提交。"); ok = false; } else setError("f-consent", "");
+      if (title.length < 4) { setError("f-title", t("err.title")); ok = false; } else setError("f-title", "");
+      if (!stage) { setError("f-stage", t("err.stage")); ok = false; } else setError("f-stage", "");
+      if (!grade) { setError("f-grade", t("err.grade")); ok = false; } else setError("f-grade", "");
+      if (!hours) { setError("f-hours", t("err.hours")); ok = false; } else setError("f-hours", "");
+      if (flow.length < 2) { setError("f-flow", t("err.flow")); ok = false; } else setError("f-flow", "");
+      if (outcome.length < 20) { setError("f-outcome", t("err.outcome")); ok = false; } else setError("f-outcome", "");
+      if (reflection.length < 20) { setError("f-reflection", t("err.reflect")); ok = false; } else setError("f-reflection", "");
+      if (!consent) { setError("f-consent", t("err.consent")); ok = false; } else setError("f-consent", "");
       if (!ok) {
         var firstErr = $(".has-error input, .has-error textarea, .has-error select", form);
         if (firstErr) firstErr.focus();
@@ -311,17 +330,18 @@
 
       var list = loadUserCases();
       var id = "user-" + Date.now().toString(36);
+      var steps = flow.split(/[、，,;；\n]+/).map(function (s) { return s.trim(); }).filter(Boolean);
       list.push({
         id: id,
-        title: title,
+        title: { zh: title, en: title },
         stage: stage,
-        grade: grade,
-        subject: subject || "未注明",
-        hours: hours,
-        flow: flow.split(/[、，,;；\n]+/).map(function (s) { return s.trim(); }).filter(Boolean),
-        outcome: outcome,
-        reflection: reflection,
-        context: context || "—",
+        grade: { zh: grade, en: grade },
+        subject: { zh: subject || "未注明", en: subject || "Unspecified" },
+        hours: { zh: hours, en: hours },
+        flow: { zh: steps, en: steps },
+        outcome: { zh: outcome, en: outcome },
+        reflection: { zh: reflection, en: reflection },
+        context: { zh: context || "—", en: context || "—" },
         teacher: teacher,
         year: String(new Date().getFullYear())
       });
@@ -351,8 +371,13 @@
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
     initReveal();
-    initCasesPage();
-    initFeatured();
+    var casesPage = initCasesPage();
+    var featured = initFeatured();
     initForm();
+    /* 语言切换后重渲染动态内容 */
+    document.addEventListener("langchange", function () {
+      if (casesPage) casesPage.render();
+      if (featured) featured.render();
+    });
   });
 })();
