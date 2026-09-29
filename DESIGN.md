@@ -66,6 +66,7 @@
 ### Rules
 - 正文 ≥14px，行高 1.7–1.8（中文可读性）。
 - 引语用衬线斜体 + 无衬线署名（参考站 Tim Brown 引言语法）。
+- 双语约定：i18n 字典（assets/i18n.js）提供完整 zh/en 平行键；英文显示沿用同一比例——衬线标题用 Noto Serif SC 自带拉丁字形（Source Serif 风格，与宋体观感一致），标签宽字距 0.167em 对大写英文同样成立；`line-break: strict` 仅影响 CJK 标点，不影响英文断行。案例种子数据字段为 `{zh, en}` 对象，学段以稳定 ID（pl/ph/jh/sh/cross）存储、标签按语言映射。
 
 ## 4. Spacing & Layout
 
@@ -136,6 +137,12 @@
 
 ### ProfileBlock（主理人）
 - Structure: ≥900px 两栏（肖像 320px / 履历 1fr），<900px 单栏；肖像方形容器带 1px --line 边 + 8px 白色相纸边距（编辑风）；履历含衬线引语块 + 资质列表（发丝分隔）+ 经历时间线（左竖线 + 节点）。
+
+### LanguageToggle（语言切换）
+- Structure: 顶栏内按钮（桌面端在链接组右侧、<768px 在汉堡按钮左侧），显示目标语言名：中文态显示 "EN"、英文态显示 "中文"；44px 最小触控目标。
+- States: 默认 1px --line 边；hover 边框转 #000；focus-visible 2px --accent 描边；active scale(0.98)。
+- Behavior: 点击切换 zh↔en → `applyLang` 更新全部 `[data-i18n*]` 节点、`<html lang>`、页面 title/description → 派发 `langchange` 事件（案例列表/精选由 app.js 重渲染）→ localStorage `dt_lang` 持久化，默认 zh。
+- A11y: aria-label 本地化（"Switch to English" / "切换到中文"）。
 
 ### Footer
 - Structure: 黑色满幅带，白字；三列（wordmark/导航/说明），底部 Micro 版权行。
