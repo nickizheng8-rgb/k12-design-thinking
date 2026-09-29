@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>设计思维在 K12 — 教学案例资源库</title>
+  <meta name="description" content="面向 K12 教育者的设计思维教学案例资源库：收集、展示一线设计思维教学案例，支持教师提交分享。由主理人 Nicki Zheng 发起。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ED943E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-nav">
+    <div class="container site-nav__inner">
+      <a class="wordmark" href="index.html">设计思维在 K12<span class="dot">.</span></a>
+      <nav class="site-nav__links" aria-label="主导航">
+        <a href="index.html" aria-current="page">首页</a>
+        <a href="cases.html">案例库</a>
+        <a href="submit.html">提交案例</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="打开菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <nav class="nav-panel container" id="nav-panel" aria-label="移动端导航">
+      <a href="index.html" aria-current="page">首页</a>
+      <a href="cases.html">案例库</a>
+      <a href="submit.html">提交案例</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero：橙色满幅带 + 黑色宋体 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__inner">
+          <p class="kicker">K12 Design Thinking Case Library</p>
+          <h1 class="display" id="hero-title" style="margin-top: 16px;">让设计思维，<br>长在真实的课堂里。</h1>
+          <p class="body-lg">这里收集发生在 K12 校园中的设计思维教学案例——它们来自一线教师的真实课堂，记录学生如何共情、定义、构思、原型与迭代。欢迎你阅读、取用，也欢迎你提交自己的案例。</p>
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="cases.html">进入案例库</a>
+            <a class="btn btn-ghost" href="submit.html">提交一个案例</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 网站简介：编辑三栏 -->
+    <section class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="editorial">
+          <aside class="editorial__rail" aria-label="本页目录">
+            <ul>
+              <li><a href="#about">这个网站做什么</a></li>
+              <li><a href="#flow">案例的五个步骤</a></li>
+              <li><a href="#host">主理人</a></li>
+              <li><a href="#featured">精选案例</a></li>
+            </ul>
+          </aside>
+
+          <div class="reading" id="about">
+            <span class="badge reveal">关于本站</span>
+            <h2 class="h1 reveal" id="about-title" style="margin-top: 20px;">为什么要有这个案例库</h2>
+            <p class="body-lg reveal" style="margin-top: 20px;">设计思维进入中小学课堂已有多年，但大多数一线教师在开始自己的第一个项目时，依然缺一样东西：<strong>别人真实做过的例子</strong>——不是方法论文章，而是带着学生成果与教师反思的完整教学记录。</p>
+            <p class="reveal" style="margin-top: 16px;">这个网站就是一个正在生长的案例库。我们按学段与课时整理案例，呈现每个项目走了哪几步、学生做出了什么、教师在哪些地方踩了坑。你可以直接检索取用，也可以把自己的案例提交进来，让更多课堂少走弯路。</p>
+
+            <blockquote class="pullquote reveal">
+              “设计思维是一种以人为本的创新方法——它从设计者的工具箱里汲取养分，把人的需求、技术的可能与成功的必要条件整合起来。”
+              <cite>— Tim Brown，IDEO 董事长</cite>
+            </blockquote>
+
+            <h3 class="h2 reveal" id="flow">案例的五个步骤</h3>
+            <p class="reveal" style="margin-top: 12px;">案例库中的项目大多沿着这条路径展开。它不是流水线——好的课堂常常在其中某一步来回多次。</p>
+            <ol class="flow-steps reveal">
+              <li><div><strong>共情 Empathize</strong><span>观察、采访、亲身体验用户的真实处境</span></div></li>
+              <li><div><strong>定义 Define</strong><span>把散乱的发现收拢成一个值得解决的观点</span></div></li>
+              <li><div><strong>构思 Ideate</strong><span>先求多、再求好，让数量带来惊喜</span></div></li>
+              <li><div><strong>原型 Prototype</strong><span>动手做出可以拿来讨论的东西</span></div></li>
+              <li><div><strong>测试 Test</strong><span>交给真实用户，把反馈带回下一次迭代</span></div></li>
+            </ol>
+          </div>
+
+          <div>
+            <aside class="editorial__aside reveal">
+              <strong>案例如何收录</strong>
+              <p style="margin-top: 6px;">每个案例均记录学段、课时、设计流程、学生成果与教师反思，由主理人整理或教师自主提交。</p>
+            </aside>
+            <aside class="editorial__aside reveal">
+              <strong>可以怎样使用</strong>
+              <p style="margin-top: 6px;">按学段筛选相近案例，直接迁移流程设计；对照反思部分预判实施风险。</p>
+            </aside>
+            <aside class="editorial__aside reveal">
+              <strong>一个约定</strong>
+              <p style="margin-top: 6px;">案例中的学生信息均已脱敏；引用案例开展教学无需授权，请注明出处。</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主理人：浅粉带 -->
+    <section class="section band-rose" id="host" aria-labelledby="host-title">
+      <div class="container">
+        <span class="badge reveal">主理人</span>
+        <h2 class="h1 reveal" id="host-title" style="margin-top: 20px;">一位还在教室里的设计思维教师</h2>
+
+        <div class="profile" style="margin-top: 48px;">
+          <figure class="profile__portrait reveal">
+            <img src="assets/nicki-portrait.jpg" alt="主理人 Nicki Zheng 的插画肖像" width="640" height="800">
+            <figcaption class="micro muted">Nicki Zheng · 设计思维教师</figcaption>
+          </figure>
+
+          <div>
+            <h3 class="profile__name reveal">Nicki Zheng</h3>
+            <p class="profile__role reveal">K12 国际学校设计思维教师 · 案例库发起人</p>
+
+            <p class="reveal" style="margin-top: 20px;">拥有 15 年一线教学经验：曾任中文教师、人文教师，教授全球视野与跨学科项目式学习课程；目前任职于 K12 国际学校，担任设计思维教师。白天在教室里和学生一起做项目，晚上和周末维护这个案例库——她相信好的案例值得被更多课堂看见。</p>
+
+            <ul class="cred-list reveal">
+              <li><span class="k label">认证</span><span class="v">IB 注册教育者（IB World School Educator）</span></li>
+              <li><span class="k label">认证</span><span class="v">IBDP 环境系统与社会（ESS）持证教师</span></li>
+              <li><span class="k label">进修</span><span class="v">完成 MIT Online Universal AI 课程</span></li>
+              <li><span class="k label">进修</span><span class="v">完成 Korda Institute 项目设计课程</span></li>
+            </ul>
+
+            <ul class="timeline reveal">
+              <li>
+                <strong>与 High Tech High 一线教师联合开发双语项目夏令营</strong>
+                <span>与美国知名 PBL 学校 High Tech High 的一线教师共同开发、落地多场双语项目式学习夏令营，将真实项目带入中国课堂。</span>
+              </li>
+              <li>
+                <strong>中学生赛事指导与评委</strong>
+                <span>担任 WSC 世界学者杯、CNCC 中国青少年商业研习、CBPA 等赛事的指导教师与评委，指导学生多次获得竞赛大奖。</span>
+              </li>
+              <li>
+                <strong>发起 K12 设计思维案例库</strong>
+                <span>把十五年课堂经验与同行们的实践整理成可检索、可迁移的案例集，服务更多一线教育者。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选案例 -->
+    <section class="section" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div style="display:flex; flex-wrap:wrap; gap: 16px; align-items: end; justify-content: space-between;">
+          <div>
+            <span class="badge reveal">精选案例</span>
+            <h2 class="h1 reveal" id="featured-title" style="margin-top: 20px;">先看三个，感受一下</h2>
+          </div>
+          <a class="btn btn-ghost reveal" href="cases.html">查看全部案例</a>
+        </div>
+        <ul class="case-grid" id="featured-list" style="margin-top: 48px;"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="wordmark" href="index.html">设计思维在 K12<span style="color: var(--accent);">.</span></a>
+          <p>一个由一线教师维护的 K12 设计思维教学案例资源库。案例仅供教学参考，引用请注明出处。</p>
+        </div>
+        <div class="site-footer__col">
+          <span class="label">导航</span>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cases.html">案例库</a></li>
+            <li><a href="submit.html">提交案例</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <span class="label">主理人</span>
+          <ul>
+            <li><a href="#host">Nicki Zheng</a></li>
+            <li><a href="#flow">设计流程五步</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <span class="micro">© 2026 设计思维在 K12 · 案例库</span>
+        <span class="micro">Made by educators, for educators</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/cases.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
