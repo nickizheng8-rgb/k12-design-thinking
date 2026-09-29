@@ -11,58 +11,61 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body data-page="cases">
+  <a class="skip-link" href="#main" data-i18n="app.skip">跳到主要内容</a>
 
   <header class="site-nav">
     <div class="container site-nav__inner">
       <a class="wordmark" href="index.html">设计思维在 K12<span class="dot">.</span></a>
       <nav class="site-nav__links" aria-label="主导航">
-        <a href="index.html">首页</a>
-        <a href="cases.html" aria-current="page">案例库</a>
-        <a href="submit.html">提交案例</a>
+        <a href="index.html" data-i18n="nav.home">首页</a>
+        <a href="cases.html" aria-current="page" data-i18n="nav.cases">案例库</a>
+        <a href="submit.html" data-i18n="nav.submit">提交案例</a>
       </nav>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="打开菜单">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
+      <div class="site-nav__actions">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" data-i18n-aria="app.menu.open">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
     </div>
     <nav class="nav-panel container" id="nav-panel" aria-label="移动端导航">
       <a href="index.html">首页</a>
-      <a href="cases.html" aria-current="page">案例库</a>
-      <a href="submit.html">提交案例</a>
+      <a href="cases.html" aria-current="page" data-i18n="nav.cases">案例库</a>
+      <a href="submit.html" data-i18n="nav.submit">提交案例</a>
     </nav>
   </header>
 
   <main id="main">
     <div class="container">
       <div class="page-head">
-        <span class="kicker">Case Library</span>
-        <h1 class="h1" style="margin-top: 16px;">案例库</h1>
-        <p class="body-lg">每一个案例都记录了完整的教学路径：它是怎么开始的、学生做了什么、教师在过程中学到了什么。点击卡片查看全文。</p>
+        <span class="kicker" data-i18n="cases.kicker">Case Library</span>
+        <h1 class="h1" style="margin-top: 16px;" data-i18n="cases.title">案例库</h1>
+        <p class="body-lg" data-i18n="cases.desc">每一个案例都记录了完整的教学路径：它是怎么开始的、学生做了什么、教师在过程中学到了什么。点击卡片查看全文。</p>
       </div>
 
       <!-- 筛选栏 -->
       <fieldset style="border: 0; padding: 0; margin: 0;">
-        <legend class="skip-link">按学段筛选</legend>
+        <legend class="skip-link" data-i18n="cases.filter.legend">按学段筛选</legend>
         <div class="filter-bar">
-          <div class="pill-group" role="radiogroup" aria-label="按学段筛选">
-            <input type="radio" name="stage-filter" id="sf-all" value="全部" checked>
-            <label class="pill" for="sf-all">全部</label>
-            <input type="radio" name="stage-filter" id="sf-low" value="小学低年级">
-            <label class="pill" for="sf-low">小学低年级</label>
-            <input type="radio" name="stage-filter" id="sf-high" value="小学高年级">
-            <label class="pill" for="sf-high">小学高年级</label>
-            <input type="radio" name="stage-filter" id="sf-junior" value="初中">
-            <label class="pill" for="sf-junior">初中</label>
-            <input type="radio" name="stage-filter" id="sf-senior" value="高中">
-            <label class="pill" for="sf-senior">高中</label>
-            <input type="radio" name="stage-filter" id="sf-cross" value="跨学段">
-            <label class="pill" for="sf-cross">跨学段</label>
+          <div class="pill-group" role="radiogroup" data-i18n-aria="cases.filter.label" aria-label="按学段筛选">
+            <input type="radio" name="stage-filter" id="sf-all" value="all" checked>
+            <label class="pill" for="sf-all" data-i18n="stage.all">全部</label>
+            <input type="radio" name="stage-filter" id="sf-low" value="pl">
+            <label class="pill" for="sf-low" data-i18n="stage.pl">小学低年级</label>
+            <input type="radio" name="stage-filter" id="sf-high" value="ph">
+            <label class="pill" for="sf-high" data-i18n="stage.ph">小学高年级</label>
+            <input type="radio" name="stage-filter" id="sf-junior" value="jh">
+            <label class="pill" for="sf-junior" data-i18n="stage.jh">初中</label>
+            <input type="radio" name="stage-filter" id="sf-senior" value="sh">
+            <label class="pill" for="sf-senior" data-i18n="stage.sh">高中</label>
+            <input type="radio" name="stage-filter" id="sf-cross" value="cross">
+            <label class="pill" for="sf-cross" data-i18n="stage.cross">跨学段</label>
           </div>
           <label class="filter-search">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-            <span class="skip-link">搜索案例</span>
-            <input type="search" id="case-search" placeholder="搜索标题、成果、关键词…" aria-label="搜索案例">
+            <span class="skip-link" data-i18n="cases.search.aria">搜索案例</span>
+            <input type="search" id="case-search" placeholder="搜索标题、成果、关键词…" aria-label="搜索案例" data-i18n-placeholder="cases.search.ph" data-i18n-aria="cases.search.aria">
           </label>
           <span class="filter-count" id="case-count" aria-live="polite"></span>
         </div>
@@ -72,8 +75,8 @@
       <section style="padding-bottom: 96px;" aria-label="案例列表">
         <ul class="case-grid" id="case-list"></ul>
         <div class="empty-state" hidden>
-          <p>没有找到匹配的案例。换个关键词试试，或者
-            <a href="submit.html" style="color: var(--accent-deep); font-weight: 600;">提交第一个属于你的案例 →</a>
+          <p><span data-i18n="cases.empty.text">没有找到匹配的案例。换个关键词试试，或者</span>
+            <a href="submit.html" style="color: var(--accent-deep); font-weight: 600;" data-i18n="cases.empty.link">提交第一个属于你的案例 →</a>
           </p>
         </div>
       </section>
@@ -83,26 +86,26 @@
   <!-- 案例详情 -->
   <dialog class="case-dialog" id="case-dialog" aria-labelledby="dialog-title">
     <div class="case-dialog__inner">
-      <button class="case-dialog__close" aria-label="关闭详情">
+      <button class="case-dialog__close" data-i18n-aria="cases.dlg.close" aria-label="关闭详情">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
       <span class="badge case-dialog__stage"></span>
       <h2 class="h2" id="dialog-title" style="margin-top: 16px;"></h2>
       <div class="case-dialog__meta"></div>
       <section class="case-dialog__section">
-        <span class="label">项目背景</span>
+        <span class="label" data-i18n="cases.dlg.context">项目背景</span>
         <p class="case-dialog__context"></p>
       </section>
       <section class="case-dialog__section">
-        <span class="label">设计流程</span>
+        <span class="label" data-i18n="cases.dlg.flow">设计流程</span>
         <div class="case-dialog__flow"></div>
       </section>
       <section class="case-dialog__section">
-        <span class="label">学生成果</span>
+        <span class="label" data-i18n="cases.dlg.outcome">学生成果</span>
         <p class="case-dialog__outcome"></p>
       </section>
       <section class="case-dialog__section">
-        <span class="label">教师反思</span>
+        <span class="label" data-i18n="cases.dlg.reflect">教师反思</span>
         <p class="case-dialog__reflection"></p>
       </section>
     </div>
@@ -113,32 +116,33 @@
       <div class="site-footer__grid">
         <div>
           <a class="wordmark" href="index.html">设计思维在 K12<span style="color: var(--accent);">.</span></a>
-          <p>一个由一线教师维护的 K12 设计思维教学案例资源库。案例仅供教学参考，引用请注明出处。</p>
+          <p data-i18n="ft.desc">一个由一线教师维护的 K12 设计思维教学案例资源库。案例仅供教学参考，引用请注明出处。</p>
         </div>
         <div class="site-footer__col">
-          <span class="label">导航</span>
+          <span class="label" data-i18n="ft.col.nav">导航</span>
           <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="cases.html">案例库</a></li>
-            <li><a href="submit.html">提交案例</a></li>
+            <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+            <li><a href="cases.html" data-i18n="nav.cases">案例库</a></li>
+            <li><a href="submit.html" data-i18n="nav.submit">提交案例</a></li>
           </ul>
         </div>
         <div class="site-footer__col">
-          <span class="label">参与</span>
+          <span class="label" data-i18n="ft.col.join">参与</span>
           <ul>
-            <li><a href="submit.html">提交一个案例</a></li>
-            <li><a href="index.html#host">认识主理人</a></li>
+            <li><a href="submit.html" data-i18n="ft.link.submit">提交一个案例</a></li>
+            <li><a href="index.html#host" data-i18n="ft.link.curator">认识主理人</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__base">
-        <span class="micro">© 2026 设计思维在 K12 · 案例库</span>
-        <span class="micro">Made by educators, for educators</span>
+        <span class="micro" data-i18n="ft.copyright">© 2026 设计思维在 K12 · 案例库</span>
+        <span class="micro" data-i18n="ft.tagline">Made by educators, for educators</span>
       </div>
     </div>
   </footer>
 
   <script src="assets/cases.js"></script>
+  <script src="assets/i18n.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
