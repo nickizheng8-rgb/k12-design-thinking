@@ -39,7 +39,37 @@
     localStorage.setItem(STORE_KEY, JSON.stringify(list));
   }
   function allCases() {
-    return (window.CASES_SEED || []).concat(loadUserCases());
+    return (window.CASES_SEED || []).concat(loadUserCases()).map(mergedCase);
+  }
+
+  /* ---------- 案例编辑覆盖层 ----------
+     编辑写入 localStorage（DESIGN.md 数据层约定）：
+     种子与用户提交均不改动，渲染时按 id 合并覆盖字段。 */
+  var EDITS_KEY = "dt_k12_case_edits_v1";
+  function loadEdits() {
+    try {
+      var raw = localStorage.getItem(EDITS_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  function saveEdits(map) {
+    localStorage.setItem(EDITS_KEY, JSON.stringify(map));
+  }
+  function mergedCase(c) {
+    var e = loadEdits()[c.id];
+    if (!e) return c;
+    var m = Object.assign({}, c);
+    ["title", "grade", "subject", "hours", "flow", "outcome", "reflection", "context"].forEach(function (k) {
+      if (e[k]) m[k] = e[k];
+    });
+    if (e.stage) m.stage = e.stage;
+    if (e.year) m.year = e.year;
+    if (e.teacher) m.teacher = e.teacher;
+    return m;
+  }
+  function findCase(id) {
+    var hit = allCases().filter(function (c) { return c.id === id; })[0];
+    return hit || null;
   }
 
   /* ---------- SiteNav ---------- */
@@ -182,6 +212,8 @@
     });
     $(".case-dialog__outcome", dialog).textContent = L(c.outcome) || "—";
     $(".case-dialog__reflection", dialog).textContent = L(c.reflection) || "—";
+    var editLink = $(".case-dialog__edit", dialog);
+    if (editLink) editLink.setAttribute("href", "submit.html?edit=" + encodeURIComponent(c.id));
   }
 
   /* ---------- 案例库 ---------- */
@@ -279,10 +311,44 @@
     return { render: render };
   }
 
-  /* ---------- 提交表单 ---------- */
+  /* ---------- 提交 / 编辑表单 ---------- */
   function initForm() {
     var form = $("#case-form");
     if (!form) return;
+
+    /* 编辑态：URL 含 ?edit=<id>（DESIGN.md Form 组件 Variants） */
+    var editId = "";
+    try { editId = new URLSearchParams(location.search).get("edit") || ""; } catch (e) { }
+    var editCase = editId ? findCase(editId) : null;
+    var isEdit = !!editCase;
+
+    if (isEdit) {
+      var setKey = function (sel, key) { var el = $(sel); if (el) el.setAttribute("data-i18n", key); };
+      setKey("[data-i18n='sub.kicker']", "sub.edit.kicker");
+      setKey("[data-i18n='sub.title']", "sub.edit.title");
+      setKey("[data-i18n='sub.desc']", "sub.edit.desc");
+      setKey("[data-i18n='sub.submit']", "sub.edit.save");
+      setKey("[data-i18n='sub.ok.title']", "sub.ok.edit.title");
+      setKey("[data-i18n='sub.ok.desc.text']", "sub.ok.edit.text");
+      setKey("[data-i18n='sub.ok.desc.link']", "sub.ok.edit.link");
+      setKey("[data-i18n='sub.ok.desc.tail']", "sub.ok.edit.tail");
+      window.I18N_LIB.apply(window.I18N_LIB.current());
+
+      $("#f-title").value = L(editCase.title);
+      $("#f-stage").value = editCase.stage || "";
+      $("#f-grade").value = L(editCase.grade);
+      $("#f-subject").value = L(editCase.subject);
+      $("#f-hours").value = L(editCase.hours);
+      $("#f-flow").value = (L(editCase.flow) || []).join("、");
+      var ctx = L(editCase.context);
+      $("#f-context").value = (ctx === "—" || ctx === "—") ? "" : ctx;
+      $("#f-outcome").value = L(editCase.outcome);
+      $("#f-reflection").value = L(editCase.reflection);
+      $("#f-teacher").value = editCase.teacher || "";
+      $("#f-consent").checked = true;
+      var cancelBtn = $("#btn-cancel-edit");
+      if (cancelBtn) cancelBtn.hidden = false;
+    }
 
     function setError(id, msg) {
       var field = $("#" + id).closest(".field");
@@ -328,26 +394,48 @@
         return;
       }
 
-      var list = loadUserCases();
-      var id = "user-" + Date.now().toString(36);
       var steps = flow.split(/[、，,;；\n]+/).map(function (s) { return s.trim(); }).filter(Boolean);
-      list.push({
-        id: id,
-        title: { zh: title, en: title },
-        stage: stage,
-        grade: { zh: grade, en: grade },
-        subject: { zh: subject || "未注明", en: subject || "Unspecified" },
-        hours: { zh: hours, en: hours },
-        flow: { zh: steps, en: steps },
-        outcome: { zh: outcome, en: outcome },
-        reflection: { zh: reflection, en: reflection },
-        context: { zh: context || "—", en: context || "—" },
-        teacher: teacher,
-        year: String(new Date().getFullYear())
-      });
-      saveUserCases(list);
-
-      var refCode = "DT-" + id.toUpperCase();
+      var refCode;
+      if (isEdit) {
+        /* 编辑：写入覆盖层，种子/原提交不动（DESIGN.md 数据层约定） */
+        var edits = loadEdits();
+        edits[editId] = {
+          title: { zh: title, en: title },
+          stage: stage,
+          grade: { zh: grade, en: grade },
+          subject: { zh: subject || "未注明", en: subject || "Unspecified" },
+          hours: { zh: hours, en: hours },
+          flow: { zh: steps, en: steps },
+          outcome: { zh: outcome, en: outcome },
+          reflection: { zh: reflection, en: reflection },
+          context: { zh: context || "—", en: context || "—" },
+          teacher: teacher || editCase.teacher || "",
+          year: editCase.year || String(new Date().getFullYear())
+        };
+        saveEdits(edits);
+        refCode = "EDIT-" + editId.toUpperCase();
+        var anotherBtn = $("#btn-another");
+        if (anotherBtn) anotherBtn.hidden = true;
+      } else {
+        var list = loadUserCases();
+        var id = "user-" + Date.now().toString(36);
+        list.push({
+          id: id,
+          title: { zh: title, en: title },
+          stage: stage,
+          grade: { zh: grade, en: grade },
+          subject: { zh: subject || "未注明", en: subject || "Unspecified" },
+          hours: { zh: hours, en: hours },
+          flow: { zh: steps, en: steps },
+          outcome: { zh: outcome, en: outcome },
+          reflection: { zh: reflection, en: reflection },
+          context: { zh: context || "—", en: context || "—" },
+          teacher: teacher,
+          year: String(new Date().getFullYear())
+        });
+        saveUserCases(list);
+        refCode = "DT-" + id.toUpperCase();
+      }
       $("#success-ref").textContent = refCode;
       form.hidden = true;
       var success = $("#form-success");
