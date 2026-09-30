@@ -126,14 +126,19 @@
 - States: pill 选中 #000/#fff，未选中透明底 1px --line 边；搜索框 focus 边框 #000。
 
 ### Dialog（案例详情）
-- Structure: 原生 `<dialog>`，max-width 720px，白底 radius 2px，::backdrop rgba(10,10,10,0.5)；内部：SectionBadge 学段 + H2 标题 + meta 网格 + 各字段小节（Label + 正文）。
+- Structure: 原生 `<dialog>`，max-width 720px，白底 radius 2px，::backdrop rgba(10,10,10,0.5)；内部：SectionBadge 学段 + H2 标题 + meta 网格 + 各字段小节（Label + 正文）；底部 footer 区（上边发丝线）含「编辑案例」ghost 按钮 → `submit.html?edit=<id>`。
 - States: Esc/点击 backdrop 关闭；打开时 focus 移入，关闭归还。
 - Motion: 打开 200ms opacity + translateY(8px→0)。
 
-### Form（提交案例）
+### Form（提交/编辑案例）
 - Structure: 两栏网格（≥768px），字段含 text/select/textarea/checkbox；label 14px/600 上置；input 白底 1px --line 边 radius 2px padding 12px；帮助文字 14px --ink-2；错误文字 14px --error + 输入边转 --error。
-- States: focus 边框 #000 + 无默认 outline 换描边；invalid 提交时标错误；成功后整表单替换为确认面板（对勾 SVG + 编号 + 「再提交一个」按钮）。
+- Variants: **新建**（默认）与 **编辑**（URL 含 `?edit=<id>`：kicker/标题/说明/按钮文案切换为编辑态，字段预填当前语言值，consent 预勾选，操作区增加「取消」返回按钮）。
+- States: focus 边框 #000 + 无默认 outline 换描边；invalid 提交时标错误；成功后整表单替换为确认面板（对勾 SVG + 编号 + 「再提交一个」按钮——编辑态隐藏该按钮）。
 - A11y: 每个 input 显式 label[for]；required + aria-required；错误 aria-describedby + aria-invalid。
+
+### 数据层约定（案例编辑覆盖层）
+- 编辑写入 localStorage `dt_k12_case_edits_v1`：`{ [caseId]: 覆盖字段 }`；`allCases()` 在种子与用户提交之上做合并渲染，种子数据文件只读。
+- 覆盖字段的语言对（title/outcome/reflection 等）以提交时输入的文本同时写入 zh/en——即编辑后案例在该字段变为单语（修正以新文本为准）；stage/年份/署名单值直接覆盖。
 
 ### ProfileBlock（主理人）
 - Structure: ≥900px 两栏（肖像 320px / 履历 1fr），<900px 单栏；肖像方形容器带 1px --line 边 + 8px 白色相纸边距（编辑风）；履历含衬线引语块 + 资质列表（发丝分隔）+ 经历时间线（左竖线 + 节点）。
