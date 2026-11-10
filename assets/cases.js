@@ -351,5 +351,55 @@ window.CASES_SEED = [
       en: "The corridor corner is the loudest spot on campus, troubling the study room and two classrooms next door year-round. Students chose measurement and design over yet another 'keep quiet' campaign — the goal was real decibels, not slogans."
     },
     year: "2025"
+  },
+  {
+    id: "case-015",
+    title: { zh: "新生不迷路：开学季校园导视系统设计", en: "No More Lost Newcomers: A Campus Wayfinding System for Opening Week" },
+    stage: "jh",
+    grade: { zh: "七年级", en: "Grade 7" },
+    subject: { zh: "美术 · 信息技术", en: "Art · IT" },
+    hours: { zh: "8 课时", en: "8 class hours" },
+    flow: {
+      zh: ["迷路跟踪", "标识盘点", "新生访谈", "导视设计", "开学实测"],
+      en: ["Lost-walk shadowing", "Signage audit", "New-student interviews", "Wayfinding design", "First-day field test"]
+    },
+    outcome: {
+      zh: "学生跟踪记录 15 名新生入学首周的问路经历（累计 42 次），盘点全校标识 86 处，发现 31 处缺失或指代不清；设计出统一色块楼层标识、地面导流线与楼梯口『问路二维码』导航卡共 3 类 57 处，次年开学首周新生问路次数降至 9 次，方案由总务处制成常设标识。",
+      en: "Shadowing 15 new students through their first week (42 requests for directions in total) and auditing all 86 signs on campus, students found 31 missing or ambiguous; they designed three kinds of wayfinding — color-coded floor signage, floor-flow lines, and stairwell 'ask-the-way QR' navigation cards — 57 installations in all. Lost-direction requests in the next opening week fell to 9, and the general affairs office made the system permanent."
+    },
+    reflection: {
+      zh: "学生最初想做一块酷炫的电子导览屏，被预算否决后改用『印刷标识 + 二维码』组合，『最便宜能落地的方案』从此成为组内口头禅。手绘导视平面图时才发现，美术课学的比例尺第一次派上了真实用场。",
+      en: "Students first pitched a flashy digital navigation screen; the budget veto pushed them to a 'printed signage + QR code' combo, and 'the cheapest thing that can actually ship' became the team's mantra. Sketching the wayfinding floor plans, they realized the scale from art class had found its first real use."
+    },
+    context: {
+      zh: "每年开学，新生都会在综合楼里找错教室——标识残缺、口径不一，靠问路撑过九月。学生决定把『问路』变成一个可以被设计的系统问题。",
+      en: "Every September, new students get lost in the main building — signs are broken and inconsistent, and asking around is the only navigation. Students decided to turn 'asking the way' into a system that can be designed."
+    },
+    year: "2025"
+  },
+  {
+    id: "case-016",
+    title: { zh: "给书包减重：超重书包的调查与储物改造", en: "Lighten the Load: An Overweight Backpack Survey and Storage Redesign" },
+    stage: "jh",
+    grade: { zh: "七年级", en: "Grade 7" },
+    subject: { zh: "生物 · 数学", en: "Biology · Math" },
+    hours: { zh: "6 课时", en: "6 class hours" },
+    flow: {
+      zh: ["称重普查", "比例计算", "原因访谈", "储物改造", "两周坚持追踪"],
+      en: ["Weigh-in census", "Ratio calculation", "Cause interviews", "Storage redesign", "Two-week habit tracking"]
+    },
+    outcome: {
+      zh: "学生称量全班 44 个书包并对照体重，算出平均超重 15%（最重达体重的 24%），访谈后定位主因是『课间没时间回储物柜』；设计『课时分区携带清单 + 储物柜分层贴标 + 周五清仓制』组合方案，两周追踪后书包平均减重 1.1 千克，超重人数比例从 82% 降到 34%，校医将『书包体重对照卡』张贴进医务室。",
+      en: "Weighing all 44 backpacks in the class against body weight, students calculated an average 15% overload (the heaviest at 24%) and traced the main cause to 'no time to return to the locker between classes'; their combined fix — a per-period carry list, layered locker labels, and a Friday clean-out rule — cut average backpack weight by 1.1 kg in two weeks, with the overloaded share dropping from 82% to 34%. The school nurse posted the students' weight-comparison card in the clinic."
+    },
+    reflection: {
+      zh: "调查数据摊开后，家长群比班级先沸腾——学生的调查报告第一次被家长主动转发。最难的不是给出减重建议，而是『坚持两周』：孩子们自发发明了同桌互查打卡，让大家明白行为设计比知识传授难教得多。",
+      en: "Once the survey data went public, the parent chat group boiled over before the class did — the first time students saw their own report forwarded by parents. The hard part was never the weight-loss advice but 'sticking with it for two weeks': kids invented desk-mate check-ins on their own, and everyone learned that designing behavior is far harder to teach than knowledge."
+    },
+    context: {
+      zh: "医生建议书包不超过体重的 10%，但学生背着的书包普遍超了。项目用秤和比例把一句养生常识变成自己班级的真实数据与行为改造。",
+      en: "Doctors say a backpack should weigh no more than 10% of body weight — most students carry far more. The project turns that health rule of thumb into real class data and a behavior redesign."
+    },
+    year: "2025"
   }
 ];
