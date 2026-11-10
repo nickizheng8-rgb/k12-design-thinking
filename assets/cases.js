@@ -151,5 +151,155 @@ window.CASES_SEED = [
       en: "Starting from the everyday complaint 'I can't see the board', students used real measurement data to convince themselves first, then the school — a small data-driven environment retrofit project."
     },
     year: "2024"
+  },
+  {
+    id: "case-007",
+    title: { zh: "旧校服去哪儿了：一场有温度的回收再造计划", en: "Where Do Old Uniforms Go? A Warm-Hearted Upcycling Campaign" },
+    stage: "jh",
+    grade: { zh: "七年级", en: "Grade 7" },
+    subject: { zh: "化学 · 设计", en: "Chemistry · Design" },
+    hours: { zh: "8 课时", en: "8 class hours" },
+    flow: {
+      zh: ["回收统计", "采访定义", "材料实验", "再造原型", "义卖展示"],
+      en: ["Collection audit", "Interviews & define", "Material experiments", "Upcycling prototypes", "Charity sale"]
+    },
+    outcome: {
+      zh: "学生清点并分类回收旧校服 217 件，访谈 40 名同学后发现『有纪念意义不舍得扔』是最大障碍；设计出帆布袋、抱枕、收纳袋 3 类再造品 14 件，在校义卖筹得 680 元捐给对口帮扶学校，回收流程被德育处写进每学年期末常规。",
+      en: "Students collected and sorted 217 old uniforms and interviewed 40 classmates, finding that 'they carry memories, so I can't throw them away' was the biggest barrier; they designed 14 upcycled items in three lines — tote bags, cushions and storage pouches — raised 680 yuan for a partner school at a charity sale, and the recycling routine was written into the school's term-end procedures."
+    },
+    reflection: {
+      zh: "化学老师本以为难点在面料识别，实际难点在情感：同学们不愿让『有故事的校服』变成材料。后来加入『给校服写一句话』环节，旧衣才真正进入回收箱。义卖定价完全由学生用成本加成法算出，比课堂练习扎实得多。",
+      en: "The chemistry teacher expected fabric identification to be the hard part; the real difficulty was emotional — classmates refused to turn 'uniforms with stories' into raw material. Adding a 'write one sentence for your uniform' step finally moved clothes into the collection bins. Students priced the sale themselves with cost-plus math, a far more solid application than any worksheet."
+    },
+    context: {
+      zh: "每年换季都有成堆旧校服被丢弃。学生从『浪费』的抱怨出发，用设计思维把情感障碍变成方案的一部分。",
+      en: "Every season change leaves piles of discarded uniforms. Starting from complaints about waste, students used design thinking to turn the emotional barrier into part of the solution."
+    },
+    year: "2025"
+  },
+  {
+    id: "case-008",
+    title: { zh: "为校园流浪猫设计一个家", en: "Designing a Home for the Campus Stray Cats" },
+    stage: "ph",
+    grade: { zh: "四年级", en: "Grade 4" },
+    subject: { zh: "科学 · 道德与法治", en: "Science · Ethics & Law" },
+    hours: { zh: "6 课时", en: "6 class hours" },
+    flow: {
+      zh: ["观察投喂点", "定义需求", "画设计图", "搭建猫屋", "两周观察迭代"],
+      en: ["Observe feeding spots", "Define needs", "Sketch designs", "Build cat shelters", "Two-week observation & iteration"]
+    },
+    outcome: {
+      zh: "学生连续两周定点观察校园 3 只流浪猫的活动路线与躲雨习惯，总结出『保暖、防潮、有两个出口』的设计标准；用木条和防水布搭建 2 座猫屋，经 3 次位置调整后被猫稳定使用，24 篇观察日记成为班级阅读角最受欢迎的材料。",
+      en: "Over two weeks students tracked the routes and rain-shelter habits of three campus stray cats and derived design criteria — warm, dry, with two exits; they built two shelters from wood strips and waterproof cloth, relocated them three times before the cats settled in, and the 24 observation journal entries became the reading corner's most popular material."
+    },
+    reflection: {
+      zh: "孩子们最初的猫屋画满了蝴蝶结和铃铛——『用户需求』这一课是猫教的：第一版猫屋因为放在人多的操场边被猫回避了整整一周。把『猫是否住进去』作为唯一评价标准后，所有讨论突然变得务实。",
+      en: "The children's first drawings were covered in ribbons and bells — the lesson about 'user needs' was taught by the cats themselves: version one sat ignored for a whole week beside the busy playground. Once 'do the cats actually move in' became the only success criterion, every discussion turned practical."
+    },
+    context: {
+      zh: "校园流浪猫冬天没有固定的避风处，学生想帮忙但喂食反而引来矛盾。项目让关爱落地为可验证的设计。",
+      en: "Campus stray cats had no sheltered spot in winter; students wanted to help but feeding caused friction. The project turned care into verifiable design."
+    },
+    year: "2024"
+  },
+  {
+    id: "case-009",
+    title: { zh: "给放学路做安全设计", en: "Designing a Safer Walk Home from School" },
+    stage: "jh",
+    grade: { zh: "八年级", en: "Grade 8" },
+    subject: { zh: "地理 · 数学", en: "Geography · Math" },
+    hours: { zh: "7 课时", en: "7 class hours" },
+    flow: {
+      zh: ["路口蹲点计数", "绘制风险地图", "采访交警和家长", "方案设计", "提案路演"],
+      en: ["Junction counts", "Risk mapping", "Interviews with police & parents", "Solution design", "Proposal roadshow"]
+    },
+    outcome: {
+      zh: "学生在上下学高峰对校门口 4 个路口做了 3 天人流车流计数，绘制带热力标注的风险地图 1 套，识别出『对向车流视觉盲区』等 5 个风险点；设计的错峰放学与家长等候区划线方案被交警中队采纳试用，试点周事故零发生、接娃平均等候时间缩短 8 分钟。",
+      en: "Students counted pedestrian and vehicle flows for three days at four junctions around the school gate, produced a risk map with heat annotations identifying five danger points including a sight-line blind spot against oncoming traffic; their staggered dismissal and painted parent waiting-zone proposal was trialed by the local traffic police — zero incidents in the pilot week and average pick-up waits shortened by 8 minutes."
+    },
+    reflection: {
+      zh: "数学课学的平均数第一次有了『让交警点头』的分量。最大的意外是家长比想象中抗拒改变接娃习惯，学生们不得不给方案加了一周的双语告示和现场引导——说服用户的时间要算进课时。",
+      en: "Averages from math class finally carried the weight of getting a nod from traffic police. The biggest surprise: parents resisted changing pick-up habits more than expected, and students had to add a week of bilingual notices and on-site guiding — time spent persuading users must be budgeted into the hours."
+    },
+    context: {
+      zh: "校门口放学时段的交通混乱是每个学校的老大难。学生用真实数据代替『我觉得危险』，向成人世界提出有依据的方案。",
+      en: "After-school chaos at the school gate is every school's chronic headache. Students replaced 'I feel it's dangerous' with real data and proposed evidence-based solutions to the adult world."
+    },
+    year: "2025"
+  },
+  {
+    id: "case-010",
+    title: { zh: "让沉睡的书被借走：图书馆滞销书唤醒计划", en: "Waking the Sleeping Books: A Library Revival Project" },
+    stage: "sh",
+    grade: { zh: "高二", en: "Grade 11" },
+    subject: { zh: "信息技术 · 设计", en: "IT · Design" },
+    hours: { zh: "9 课时", en: "9 class hours" },
+    flow: {
+      zh: ["借阅数据分析", "读者访谈", "定义『沉睡书』", "漂流角与推荐卡设计", "一个月数据追踪"],
+      en: ["Borrowing-data analysis", "Reader interviews", "Define 'sleeping books'", "Drift-corner & recommendation card design", "One-month data tracking"]
+    },
+    outcome: {
+      zh: "学生分析图书馆近三年 12,000 条借阅记录，找出 1,300 余本零借阅图书，访谈 26 位读者后定位出『找不到、不知道、不感兴趣』三类原因；设计『主题漂流角 + 手写推荐卡』方案上线一个月，滞销书借出量从 0 提升到 103 册，推荐卡被图书馆员做成常设栏目。",
+      en: "Analyzing 12,000 borrowing records from three years, students identified 1,300+ books with zero checkouts and, after interviewing 26 readers, traced the causes to three buckets — can't find it, never heard of it, not interested; their 'theme drift corner + handwritten recommendation cards' scheme lifted dormant-book checkouts from zero to 103 volumes in one month, and the librarian made the cards a permanent feature."
+    },
+    reflection: {
+      zh: "学生最初想做一个图书推荐 App，但接入图书馆系统成本太高；漂流角半天就落地。教训是『先做能立刻验证的最小方案』。另一个收获：手写推荐卡的情绪价值远超算法——『这本书让我哭过』比任何标签都有效。",
+      en: "Students first pitched a book-recommendation app, but the cost of touching the library system was too high; the drift corner launched in half a day. The lesson: build the smallest solution you can verify immediately. Another takeaway — handwritten cards carry emotional value no algorithm matches; 'this book made me cry' outperforms any tag."
+    },
+    context: {
+      zh: "图书馆藏书越买越多，借阅率却逐年下降。学生用真实借阅数据做『图书体检』，让沉睡的书重新被需要。",
+      en: "The library keeps buying more books while borrowing rates keep falling. Students ran a 'health check' on the collection with real data, making sleeping books needed again."
+    },
+    year: "2025"
+  },
+  {
+    id: "case-011",
+    title: { zh: "课桌椅匹配行动：为长高的我们换桌椅", en: "The Desk-Height Match: Right Furniture for Growing Bodies" },
+    stage: "cross",
+    grade: { zh: "五至七年级", en: "Grades 5–7" },
+    subject: { zh: "生物 · 数学", en: "Biology · Math" },
+    hours: { zh: "5 课时", en: "5 class hours" },
+    flow: {
+      zh: ["身高桌椅普测", "标准对照", "跨班提案", "调换执行", "舒适度回访"],
+      en: ["Height & desk survey", "Standard comparison", "Cross-class proposal", "Swap execution", "Comfort follow-up"]
+    },
+    outcome: {
+      zh: "学生测量 6 个班级 312 套课桌椅与使用者身高，按国家标准算出 47% 的桌椅高度不匹配；制作『桌椅身高对照卡』贴到每间教室，推动后勤完成 3 个班级的整体调换，回访显示写作业时『腿顶着桌子』的报告率从 38% 降到 6%。",
+      en: "Students measured 312 desk-chair sets and their users across six classes, finding 47% mismatched against national standards by height; they posted a self-made 'desk-height comparison card' in every classroom and pushed the logistics office to complete swaps for three whole classes — follow-up showed reports of 'knees hitting the desk' dropping from 38% to 6%."
+    },
+    reflection: {
+      zh: "数据本身不会改变学校，会沟通才会：学生第一次提案被搁置，第二次附上了教室实拍对比照和各班签名，才推动调换。人体工学国标检索是信息课没教过的真实检索场景。",
+      en: "Data alone doesn't change a school — communication does: the first proposal was shelved, and only the second, with side-by-side classroom photos and signatures from each class, moved the logistics office. Looking up ergonomic national standards was a real retrieval task no IT lesson had ever set."
+    },
+    context: {
+      zh: "『桌子太矮了』是学生每天都在说的话，却从来没人量过。项目让学生为自己每天 8 小时相伴的家具做一次数据驱动的优化。",
+      en: "'The desk is too low' is something students say every day, yet no one had ever measured. The project has students data-optimize the furniture they sit with eight hours a day."
+    },
+    year: "2024"
+  },
+  {
+    id: "case-012",
+    title: { zh: "一顿年夜饭的碳足迹：低碳家宴改造", en: "The Carbon Footprint of a Family Feast: A Low-Carbon New Year's Dinner" },
+    stage: "sh",
+    grade: { zh: "高一 ESS 班", en: "Grade 10 ESS class" },
+    subject: { zh: "环境系统与社会 · 化学", en: "ESS · Chemistry" },
+    hours: { zh: "8 课时", en: "8 class hours" },
+    flow: {
+      zh: ["家宴食材清单", "碳足迹核算", "低碳替代构思", "试做家宴", "家庭反馈收集"],
+      en: ["Menu ingredient audit", "Carbon-footprint accounting", "Low-carbon substitution ideation", "Trial cooking", "Family feedback collection"]
+    },
+    outcome: {
+      zh: "21 名学生各自核算自家一顿年夜饭的碳足迹（覆盖 4 个菜系、人均 18.6 kg CO₂e），共同编写《低碳年菜替换手册》：红烧肉换菌菇炖鸡、空运虾改本地鱼等 12 条替换建议；12 个家庭试做低碳版家宴，人均碳足迹下降 31%，手册被社区公众号转载。",
+      en: "Twenty-one students each audited their family's New Year's Eve dinner (covering four regional cuisines, 18.6 kg CO₂e per person on average) and co-authored a low-carbon substitution handbook with 12 swaps — braised pork to mushroom chicken stew, flown-in prawns to local fish; twelve families cooked the low-carbon versions, cutting per-person footprint by 31%, and the handbook was reposted by a community WeChat account."
+    },
+    reflection: {
+      zh: "碳核算网上工具给的数字打架，学生学会了标注数据来源和不确定性——这比得出一个漂亮数字更接近真实的科学。有学生家长从抵触到主动问『那牛肉换鸡肉能减多少』，家庭对话本身就是这门课的成果。",
+      en: "Online carbon calculators gave conflicting numbers, and students learned to flag data sources and uncertainty — closer to real science than a neat figure. One parent moved from resistance to asking 'how much would swapping beef for chicken save'; the dinner-table conversation itself was the deliverable."
+    },
+    context: {
+      zh: "把『气候变化』从课本拉到年夜饭的餐桌上：每个家庭的一顿饭，就是最贴身的数据样本和最有共鸣的行动起点。",
+      en: "Pulling 'climate change' from the textbook onto the New Year's dinner table: every family's one meal is the most personal data sample and the most relatable starting point for action."
+    },
+    year: "2025"
   }
 ];
