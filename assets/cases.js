@@ -401,5 +401,30 @@ window.CASES_SEED = [
       en: "Doctors say a backpack should weigh no more than 10% of body weight — most students carry far more. The project turns that health rule of thumb into real class data and a behavior redesign."
     },
     year: "2026"
+  },
+  {
+    id: "case-017",
+    title: { zh: "不只是 I like…：Y6 创意自我介绍发布会", en: "Introduce Yourself in a Creative Way: The Y6 Launch Event" },
+    stage: "ph",
+    grade: { zh: "Y6（六年级）", en: "Year 6" },
+    subject: { zh: "英语 · 班本课程", en: "English · Class-based course" },
+    hours: { zh: "5 课时", en: "5 class hours" },
+    flow: {
+      zh: ["搭档深挖访谈", "定义记忆点", "创意构思", "原型制作", "发布会与互评"],
+      en: ["Partner deep-dive interview", "Define your memory hook", "Creative ideation", "Prototype making", "Launch event & peer review"]
+    },
+    outcome: {
+      zh: "全班 36 名学生每人完成一件创意自我介绍作品，涵盖『猜猜我是谁』互动卡、漫画海报、90 秒英文短视频、随身物收藏盒等 5 类形式；发布会当天人人登台，英文开口发言率由前测的 45% 升至 83%，班级互评选出『最想认识的同学』12 名并结成新同桌，作品墙成为家长开放日的打卡点。",
+      en: "All 36 students produced a creative self-introduction piece across five formats — 'guess who' interactive cards, comic posters, 90-second English videos, personal-object collection boxes and more; everyone presented on launch day, the share of students willing to speak English on stage rose from 45% (pre-test) to 83%, peer votes elected 12 'classmates I most want to know' who became new desk mates, and the work wall became the photo stop of the parents' open day."
+    },
+    reflection: {
+      zh: "学生最初的介绍全是『我叫……我喜欢……』——搭档深挖访谈才挖出『我收集了 27 架纸飞机』这样被记住的细节。上台前的英语焦虑是真实的：同桌排练两遍再登台成了固定动作；最安静的学生靠一只模型飞机完成了全场最难忘的介绍。",
+      en: "Early drafts were all 'My name is… I like…' — the partner deep-dive interview surfaced memorable details like 'I have folded 27 paper planes.' Stage anxiety in English was real: rehearsing twice with a desk mate became the fixed ritual before going on stage, and the quietest student gave the most unforgettable intro of the day with a single model plane."
+    },
+    context: {
+      zh: "新班级成立第一周，彼此还叫不出名字。让学生把『自我介绍』当成一个设计挑战：用户是即将共处一年的同学，目标是被真正记住。",
+      en: "Week one of a brand-new class, when names are still fuzzy. Students treat 'introduce yourself' as a design challenge: the users are the classmates they will spend the year with, and the goal is to be genuinely remembered."
+    },
+    year: "2026"
   }
 ];
