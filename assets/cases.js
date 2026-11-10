@@ -25,7 +25,7 @@ window.CASES_SEED = [
       zh: "雨季操场东侧大面积积水，学生课间无法活动。学生以校园真实空间为对象，学习渗透、径流等水文概念，并向学校后勤部门提出可落地的改造方案。",
       en: "Seasonal puddles made the east playground unusable between classes. Students studied a real campus space, learned infiltration and runoff concepts, and proposed buildable changes to the school's logistics office."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-002",
@@ -50,7 +50,7 @@ window.CASES_SEED = [
       zh: "从学生每天亲历的午餐浪费切入，用计量、访谈（同学+食堂阿姨）建立共情，设计出让『吃多少打多少』变容易的机制。",
       en: "Starting from the food waste students witness at lunch every day, they measured, interviewed classmates and cafeteria staff to build empathy, and designed mechanisms that make 'take only what you'll eat' easy."
     },
-    year: "2024"
+    year: "2026"
   },
   {
     id: "case-003",
@@ -75,7 +75,7 @@ window.CASES_SEED = [
       zh: "与市盲校结对开展的双校共创项目。学生先蒙眼走完自己每天经过的校园，再与视障伙伴一起重新定义『好用的校园导航』。",
       en: "A twin-school co-creation project with a municipal school for the blind. Students first walked their own daily campus routes blindfolded, then redefined 'good campus navigation' together with visually impaired partners."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-004",
@@ -100,7 +100,7 @@ window.CASES_SEED = [
       zh: "针对课间追逐打闹与『不许出教室』两个极端，让学生自己观察、表达并设计出想玩、能玩、安全的课间游戏。",
       en: "Caught between chaotic chasing and 'no leaving the classroom', students observed, voiced, and designed the recess games they actually want to play — fun, playable, and safe."
     },
-    year: "2024"
+    year: "2026"
   },
   {
     id: "case-005",
@@ -125,7 +125,7 @@ window.CASES_SEED = [
       zh: "基于社区共建关系开展的服务学习项目，学生以『孙辈』身份进入老人真实生活场景，用设计思维打磨一套真正好用的数字助老教学法。",
       en: "A service-learning project built on a community partnership: students enter seniors' real lives in the role of their 'grandkids' and use design thinking to shape a digital-help teaching method that actually works."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-006",
@@ -150,7 +150,7 @@ window.CASES_SEED = [
       zh: "从『上课看不清黑板』这个高频抱怨出发，学生用真实测量数据说服自己、再说服学校——一次数据驱动的环境改造小项目。",
       en: "Starting from the everyday complaint 'I can't see the board', students used real measurement data to convince themselves first, then the school — a small data-driven environment retrofit project."
     },
-    year: "2024"
+    year: "2026"
   },
   {
     id: "case-007",
@@ -175,7 +175,7 @@ window.CASES_SEED = [
       zh: "每年换季都有成堆旧校服被丢弃。学生从『浪费』的抱怨出发，用设计思维把情感障碍变成方案的一部分。",
       en: "Every season change leaves piles of discarded uniforms. Starting from complaints about waste, students used design thinking to turn the emotional barrier into part of the solution."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-008",
@@ -200,7 +200,7 @@ window.CASES_SEED = [
       zh: "校园流浪猫冬天没有固定的避风处，学生想帮忙但喂食反而引来矛盾。项目让关爱落地为可验证的设计。",
       en: "Campus stray cats had no sheltered spot in winter; students wanted to help but feeding caused friction. The project turned care into verifiable design."
     },
-    year: "2024"
+    year: "2026"
   },
   {
     id: "case-009",
@@ -225,7 +225,7 @@ window.CASES_SEED = [
       zh: "校门口放学时段的交通混乱是每个学校的老大难。学生用真实数据代替『我觉得危险』，向成人世界提出有依据的方案。",
       en: "After-school chaos at the school gate is every school's chronic headache. Students replaced 'I feel it's dangerous' with real data and proposed evidence-based solutions to the adult world."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-010",
@@ -250,7 +250,7 @@ window.CASES_SEED = [
       zh: "图书馆藏书越买越多，借阅率却逐年下降。学生用真实借阅数据做『图书体检』，让沉睡的书重新被需要。",
       en: "The library keeps buying more books while borrowing rates keep falling. Students ran a 'health check' on the collection with real data, making sleeping books needed again."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-011",
@@ -275,7 +275,7 @@ window.CASES_SEED = [
       zh: "『桌子太矮了』是学生每天都在说的话，却从来没人量过。项目让学生为自己每天 8 小时相伴的家具做一次数据驱动的优化。",
       en: "'The desk is too low' is something students say every day, yet no one had ever measured. The project has students data-optimize the furniture they sit with eight hours a day."
     },
-    year: "2024"
+    year: "2026"
   },
   {
     id: "case-012",
@@ -300,7 +300,7 @@ window.CASES_SEED = [
       zh: "把『气候变化』从课本拉到年夜饭的餐桌上：每个家庭的一顿饭，就是最贴身的数据样本和最有共鸣的行动起点。",
       en: "Pulling 'climate change' from the textbook onto the New Year's dinner table: every family's one meal is the most personal data sample and the most relatable starting point for action."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-013",
@@ -325,7 +325,7 @@ window.CASES_SEED = [
       zh: "设计思维课自己的教室体验却很糟：储物乱、桌子固定、作品没处放。学生决定用刚学会的方法，把这间教室当成第一个真实用户来改造。",
       en: "The design thinking classroom itself was a poor experience: messy storage, fixed desks, nowhere to show work. Students decided to apply their new method to the room they use every week — treating it as their first real user."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-014",
@@ -350,7 +350,7 @@ window.CASES_SEED = [
       zh: "教学楼连廊拐角是全校最吵的位置，紧邻的自习室和两个班级常年受扰。学生决定不做『安静倡议』，而是用测量和设计真正降低分贝。",
       en: "The corridor corner is the loudest spot on campus, troubling the study room and two classrooms next door year-round. Students chose measurement and design over yet another 'keep quiet' campaign — the goal was real decibels, not slogans."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-015",
@@ -375,7 +375,7 @@ window.CASES_SEED = [
       zh: "每年开学，新生都会在综合楼里找错教室——标识残缺、口径不一，靠问路撑过九月。学生决定把『问路』变成一个可以被设计的系统问题。",
       en: "Every September, new students get lost in the main building — signs are broken and inconsistent, and asking around is the only navigation. Students decided to turn 'asking the way' into a system that can be designed."
     },
-    year: "2025"
+    year: "2026"
   },
   {
     id: "case-016",
@@ -400,6 +400,6 @@ window.CASES_SEED = [
       zh: "医生建议书包不超过体重的 10%，但学生背着的书包普遍超了。项目用秤和比例把一句养生常识变成自己班级的真实数据与行为改造。",
       en: "Doctors say a backpack should weigh no more than 10% of body weight — most students carry far more. The project turns that health rule of thumb into real class data and a behavior redesign."
     },
-    year: "2025"
+    year: "2026"
   }
 ];
