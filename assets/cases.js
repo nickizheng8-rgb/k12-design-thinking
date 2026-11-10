@@ -426,5 +426,55 @@ window.CASES_SEED = [
       en: "Week one of a brand-new class, when names are still fuzzy. Students treat 'introduce yourself' as a design challenge: the users are the classmates they will spend the year with, and the goal is to be genuinely remembered."
     },
     year: "2026"
+  },
+  {
+    id: "case-018",
+    title: { zh: "改造校园快递货架：让取件不再翻找", en: "Overhauling the Campus Delivery Shelf: A Pickup-Flow Redesign" },
+    stage: "sh",
+    grade: { zh: "高二", en: "Grade 11" },
+    subject: { zh: "数学 · 通用技术", en: "Math · General Technology" },
+    hours: { zh: "9 课时", en: "9 class hours" },
+    flow: {
+      zh: ["高峰计时观察", "货架测绘", "取件访谈", "分区编号设计", "两周复测"],
+      en: ["Peak-hour timing", "Shelf mapping", "Pickup interviews", "Zoning & numbering design", "Two-week re-measurement"]
+    },
+    outcome: {
+      zh: "学生在午间高峰蹲点一周，实测收发室日均包裹 300 余件、平均取件排队 11 分钟；访谈 60 名师生定位三大痛点：无排序规则、生鲜与大件混放、错拿频发；设计『姓氏拼音分区 + 生鲜文件大件分色 + 取件动线单循环』方案，两周复测平均取件时间降至 4 分钟，错拿丢失投诉由每周 8 起降为零，方案被收发室阿姨固化为日常规则。",
+      en: "Spending a week of lunchtime observation at the mail room (300+ packages a day, average queue 11 minutes), students interviewed 60 teachers and students and pinned down three pain points — no sorting rules, fresh food mixed with large parcels, frequent mix-ups; their redesign — pinyin-surname zones, color-coded fresh/document/oversized sections, and a one-way pickup flow — brought average pickup time down to 4 minutes in a two-week re-measurement, cut mix-up reports from eight per week to zero, and the mail-room keeper made the rules permanent."
+    },
+    reflection: {
+      zh: "学生最初想做智能快递柜，一问价格便作罢——『先排序，再上技术』成了项目口号。分色标签加地面箭头只花半天就改造完成。数据采集要占用午休，小组排班时才发现连『测多久才够』都要先设计。",
+      en: "Students first pitched smart parcel lockers, then priced them out — 'sort first, tech later' became the project slogan. The color-coded labels and floor arrows took half a day to install. Data collection ate into lunch breaks, and the team only then realized even 'how long is enough measuring' needed designing."
+    },
+    context: {
+      zh: "网购是校园生活的一部分，但收发室的货架半年没被『设计』过。学生把每天都要排队的地方当成第一个服务设计对象。",
+      en: "Online shopping is part of campus life, yet the mail-room shelf had gone half a year without anyone designing it. Students took the queue they stood in every day as their first service-design subject."
+    },
+    year: "2026"
+  },
+  {
+    id: "case-019",
+    title: { zh: "如何提升动物园营业额：给真实甲方的增收提案", en: "How to Grow Zoo Revenue: A Proposal for a Real Client" },
+    stage: "sh",
+    grade: { zh: "高一", en: "Grade 10" },
+    subject: { zh: "经济 · 商业研习", en: "Economics · Business Studies" },
+    hours: { zh: "12 课时", en: "12 class hours" },
+    flow: {
+      zh: ["客户需求界定", "客流收入数据分析", "游客访谈与动线观察", "增收方案构思", "园方路演"],
+      en: ["Client briefing", "Visitor & revenue data analysis", "Guest interviews and flow observation", "Revenue idea ideation", "Proposal roadshow to the zoo"]
+    },
+    outcome: {
+      zh: "学生受市动物园委托分析近三年票务数据，发现客流高度集中于周末、二次消费占比不足 8%；120 份游客访谈定位出『可看性低、互动少、没有记忆点』三大问题；产出三组增收方案——动物投喂体验时段、周末研学课程包、亲子会员卡——园方采纳研学课程包试点，试点月二次消费提升 21%，周末客流增长 13%。",
+      en: "Commissioned by a city zoo, students analyzed three years of ticketing data and found visits concentrated on weekends with secondary spending under 8%; 120 visitor interviews traced the problems to low watchability, little interaction, and no memorable moments. They produced three revenue streams — animal-feeding experience sessions, weekend study-course packages, and a parent-child membership card; the zoo piloted the course package, lifting secondary spending 21% and weekend visits 13% in the pilot month."
+    },
+    reflection: {
+      zh: "真实商业数据是敏感的：园方只开放部分票务数据，学生学会用停车场车辆数交叉估算客流——在不完整信息下做判断是商赛里学不到的一课。第一次面对真正的『甲方』，提案 PPT 被要求改了三版，学生才懂『说服比正确更重要』。",
+      en: "Real business data is sensitive: the zoo opened only part of its ticketing records, and students learned to cross-estimate visitor numbers from parking-lot counts — a lesson in judging with incomplete information that no business competition had taught. Facing a real client for the first time, their deck came back for three rounds of revision; being persuasive, they found, matters more than being right."
+    },
+    context: {
+      zh: "把商业研习课堂搬进真实动物园：收入 = 客流 × 转化 × 客单价，这次每一项都要用真实数据说话，甲方是认真等待提案的园方。",
+      en: "Taking the business-studies classroom into a real zoo: revenue = traffic × conversion × spend per visitor — and this time every term has to be argued with real data, for a client actually waiting for the proposal."
+    },
+    year: "2026"
   }
 ];
