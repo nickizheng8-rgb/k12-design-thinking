@@ -301,5 +301,55 @@ window.CASES_SEED = [
       en: "Pulling 'climate change' from the textbook onto the New Year's dinner table: every family's one meal is the most personal data sample and the most relatable starting point for action."
     },
     year: "2025"
+  },
+  {
+    id: "case-013",
+    title: { zh: "改造我们自己的设计思维教室", en: "Renovating Our Own Design Thinking Classroom" },
+    stage: "jh",
+    grade: { zh: "七年级", en: "Grade 7" },
+    subject: { zh: "劳动 · 设计", en: "Labor Practice · Design" },
+    hours: { zh: "10 课时", en: "10 class hours" },
+    flow: {
+      zh: ["使用观察", "痛点访谈", "分区规划", "原型改造", "使用回访"],
+      en: ["Usage observation", "Pain-point interviews", "Zone planning", "Prototype renovation", "Usage follow-up"]
+    },
+    outcome: {
+      zh: "学生用两周记录本班教室的真实使用方式，访谈 28 名同学和任课教师后收拢出三大核心痛点：材料收纳混乱、固定课桌阻碍小组协作、作品没有展示处；产出两套分区方案并落地『可拼组桌椅布局 + 材料自取墙 + 作品轮展轨』三项改造，回访显示课前桌椅重组时间由 7 分钟缩短到 2 分钟，材料『找不到』的报告率下降七成。",
+      en: "Recording how their own classroom was actually used for two weeks and interviewing 28 classmates and teachers, students distilled three core pain points — chaotic material storage, fixed desks blocking group work, and nowhere to display work; they produced two zoning schemes and delivered three renovations: a reconfigurable desk layout, a self-serve materials wall, and a rotating work-display rail. Follow-up showed desk re-grouping time before class dropping from 7 minutes to 2, and 'can't find the materials' reports down by seventy percent."
+    },
+    reflection: {
+      zh: "改造涉及预算和后勤审批，学生学会了在『想要』与『能改』之间分层推进：零成本的桌椅重排先行，低成本的自制材料墙次之，大改造写成提案交学校。『拆掉讲台』的提议被否决后，小组才真正理解约束也是设计的一部分。",
+      en: "Renovation meant budgets and approvals, so students learned to layer 'want' against 'can': zero-cost desk rearrangement first, low-cost self-built storage next, and big changes written up as a proposal to the school. After the 'remove the lectern' idea was vetoed, the team finally understood that constraints are part of the design."
+    },
+    context: {
+      zh: "设计思维课自己的教室体验却很糟：储物乱、桌子固定、作品没处放。学生决定用刚学会的方法，把这间教室当成第一个真实用户来改造。",
+      en: "The design thinking classroom itself was a poor experience: messy storage, fixed desks, nowhere to show work. Students decided to apply their new method to the room they use every week — treating it as their first real user."
+    },
+    year: "2025"
+  },
+  {
+    id: "case-014",
+    title: { zh: "让角落安静下来：校园噪音治理计划（Sound Controlling Project）", en: "Sound Controlling Project: Quieting the Campus Corner" },
+    stage: "jh",
+    grade: { zh: "八年级", en: "Grade 8" },
+    subject: { zh: "物理 · 信息技术", en: "Physics · IT" },
+    hours: { zh: "9 课时", en: "9 class hours" },
+    flow: {
+      zh: ["分贝测量", "噪音溯源", "降噪构思", "软硬方案原型", "两周复测"],
+      en: ["Decibel measurement", "Source tracing", "Noise-control ideation", "Soft & hard prototypes", "Two-week re-measurement"]
+    },
+    outcome: {
+      zh: "学生用分贝仪对教学楼连廊拐角完成 5 天点位测量，记录到课间噪音峰值 78 分贝（一墙之隔的自习室窗边 62 分贝），溯源出三个成因：硬质墙面的声音反射、无引导的穿行动线、口头提醒收效甚微；组合方案包含自制吸音板装饰面 6 块、地面箭头动线贴纸与『轻声公约』加分贝显示屏提示，两周复测峰值降至 64 分贝，自习室相关投诉清零。",
+      en: "Measuring five days at the teaching-building corridor corner with sound-level meters, students logged lunch-break peaks of 78 dB (62 dB by the study-room window one wall away) and traced three causes: sound-reflecting hard walls, unguided foot traffic, and verbal reminders that barely worked; their combined fix — six self-made acoustic panels, floor arrow stickers to guide flow, and a 'quiet charter' with a live decibel display — brought peaks down to 64 dB in a two-week re-measurement, with study-room complaints dropping to zero."
+    },
+    reflection: {
+      zh: "学生原以为『贴禁止喧哗标语』最有效，实测几乎不起作用——数据让班级从道德说教转向环境设计。吸音材料的防火等级是后勤把关时补上的硬约束；物理课的反射与吸声概念第一次长在了真实空间里。",
+      en: "Students assumed 'no shouting' signs would work best — measurement showed they barely did, and data moved the class from moralizing to environmental design. The fire rating of acoustic materials was a hard constraint added when the logistics office stepped in; reflection and absorption from physics class finally lived in a real space."
+    },
+    context: {
+      zh: "教学楼连廊拐角是全校最吵的位置，紧邻的自习室和两个班级常年受扰。学生决定不做『安静倡议』，而是用测量和设计真正降低分贝。",
+      en: "The corridor corner is the loudest spot on campus, troubling the study room and two classrooms next door year-round. Students chose measurement and design over yet another 'keep quiet' campaign — the goal was real decibels, not slogans."
+    },
+    year: "2025"
   }
 ];
